@@ -1,10 +1,82 @@
 [
   {
     "id": "1",
-    "judul": "Contoh item pertama",
-    "kategori": "Contoh",
-    "fieldTema1": "ganti sesuai field tema",
-    "fieldTema2": 0,
-    "fieldTema3": "ganti sesuai field tema"
+    "judul": "Musyawarah Besar",
+    "kategori": "Organisasi",
+    "tanggal": "2026-02-11",
+    "lokasi": "Aula GKU2",
+    "penyelenggara": "Himpunan Mahasiswa Informatika"
+  },
+  {
+    "id": "2",
+    "judul": "Seminar Persiapan Karier di Bidang Teknologi",
+    "kategori": "Seminar",
+    "tanggal": "2026-03-0",
+    "lokasi": "Aula GU2",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "3",
+    "judul": "Seminar Perkembangan Artificial Intelligence",
+    "kategori": "Seminar",
+    "tanggal": "2026-04-20",
+    "lokasi": "Aula GKU2",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "4",
+    "judul": "Lomba Pembuatan Aplikasi Mobile",
+    "kategori": "Lomba",
+    "tanggal": "2026-05-15",
+    "lokasi": "Lab IoT",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "5",
+    "judul": "Kompetisi Pengembangan Website Mahasiswa",
+    "kategori": "Lomba",
+    "tanggal": "2026-06-10",
+    "lokasi": "Lab IoT",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "6",
+    "judul": "Diskusi Program Kerja Himpunan Mahasiswa Informatika",
+    "kategori": "Organisasi",
+    "tanggal": "2026-07-05",
+    "lokasi": "Aula GKU2",
+    "penyelenggara": "Himpunan Mahasiswa Informatika"
+  },
+  {
+    "id": "7",
+    "judul": "Latihan Basket Mahasiswa Teknik Informatika",
+    "kategori": "Olahraga",
+    "tanggal": "2026-08-20",
+    "lokasi": "Lapangan Basket ITERA",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "8",
+    "judul": "Lomba Debugging dan Pemecahan Masalah Algoritma",
+    "kategori": "Lomba",
+    "tanggal": "2026-09-27",
+    "lokasi": "Lab IoT",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "9",
+    "judul": "Seminar Kecerdasan Buatan dan Aplikasinya",
+    "kategori": "Seminar",
+    "tanggal": "2026-10-15",
+    "lokasi": "Aula GKU2",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
+  },
+  {
+    "id": "10",
+    "judul": "Seminar Cloud Computing untuk Mahasiswa",
+    "kategori": "Seminar",
+    "tanggal": "2026-11-05",
+    "lokasi": "Aula GKU2",
+    "penyelenggara": "Program Studi Teknik Informatika ITERA"
   }
 ]
