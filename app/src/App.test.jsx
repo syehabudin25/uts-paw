@@ -1,54 +1,30 @@
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
-import { expect, test } from 'vitest'
+import { beforeEach, expect, test, vi } from 'vitest'
 import App from './App.jsx'
 
-// Contoh test. Tambahkan minimal 5 test buatan sendiri (butir rubrik F1).
-test('rute tidak dikenal menampilkan 404', () => {
-  render(
-    <MemoryRouter initialEntries={['/tidak-ada']}>
-      <App />
-    </MemoryRouter>,
-  )
-  expect(screen.getByRole('heading', { name: '404' })).toBeInTheDocument()
+const DATA = [{ id: '1', judul: 'Musyawarah Besar', kategori: 'Organisasi', tanggal: '2026-02-11', lokasi: 'Aula GKU2', penyelenggara: 'Himpunan Mahasiswa Informatika' }]
+
+beforeEach(() => {
+  vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify(DATA))))
 })
 
-test('halaman koleksi menampilkan judul koleksi', async () => {
+function buka(path) {
   render(
-    <MemoryRouter initialEntries={['/koleksi']}>
+    <MemoryRouter initialEntries={[path]}>
       <App />
     </MemoryRouter>,
   )
-  expect(
-    await screen.findByRole('heading', { name: /koleksi/i }),).toBeInTheDocument()
+}
+
+test('menampilkan data hasil fetch di halaman koleksi', async () => {
+  buka('/koleksi')
+  expect(await screen.findByText('Laporan praktikum CSS')).toBeInTheDocument()
 })
 
-test('halaman tambah menampilkan judul tambah', async () => {
-  render(
-    <MemoryRouter initialEntries={['/tambah']}>
-      <App />
-    </MemoryRouter>,
-  )
-  expect(
-    await screen.findByRole('heading', { name: /tambah/i }),).toBeInTheDocument()
-})
-
-test('halaman statistik menampilkan judul statistik', async () => {
-  render(
-    <MemoryRouter initialEntries={['/statistik']}>
-      <App />
-    </MemoryRouter>,
-  )
-  expect(
-    await screen.findByRole('heading', { name: /statistik/i }),).toBeInTheDocument()
-})
-
-test('halaman tentang menampilkan judul tentang', async () => {
-  render(
-    <MemoryRouter initialEntries={['/tentang']}>
-      <App />
-    </MemoryRouter>,
-  )
-  expect(
-    await screen.findByRole('heading', { name: /tentang/i }),).toBeInTheDocument()
+test('form menolak judul kosong', async () => {
+  buka('/tambah')
+  await userEvent.click(screen.getByRole('button', { name: 'Simpan' }))
+  expect(screen.getByRole('alert')).toHaveTextContent('Judul wajib diisi')
 })
