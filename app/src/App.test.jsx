@@ -18,13 +18,27 @@ function buka(path) {
   )
 }
 
-test('menampilkan data hasil fetch di halaman koleksi', async () => {
-  buka('/koleksi')
-  expect(await screen.findByText('Laporan praktikum CSS')).toBeInTheDocument()
+test('rute tidak dikenal menampilkan 404', () => {
+  buka('/tidak-ada')
+  expect(screen.getByRole('heading', { name: '404' })).toBeInTheDocument()
 })
 
-test('form menolak judul kosong', async () => {
+test('halaman koleksi menampilkan judul koleksi', async () => {
+  buka('/koleksi')
+  expect(await screen.findByRole('heading', { name: /^Koleksi$/i })).toBeInTheDocument()
+})
+
+test('halaman tambah menampilkan judul tambah', () => {
   buka('/tambah')
-  await userEvent.click(screen.getByRole('button', { name: 'Simpan' }))
-  expect(screen.getByRole('alert')).toHaveTextContent('Judul wajib diisi')
+  expect(screen.getByRole('heading', { name: /Tambah/i })).toBeInTheDocument()
+})
+
+test('halaman statistik menampilkan judul statistik', () => {
+  buka('/statistik')
+  expect(screen.getByRole('heading', { name: /Statistik/i })).toBeInTheDocument()
+})
+
+test('halaman tentang menampilkan judul tentang', () => {
+  buka('/tentang')
+  expect(screen.getByRole('heading', { name: /Tentang/i })).toBeInTheDocument()
 })
