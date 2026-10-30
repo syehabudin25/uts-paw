@@ -2,11 +2,11 @@
 
 # Agenda Kegiatan Kampus
 
-Nama: Syehabudin
-NIM: 124140102
-Kelas: RA
-Tema: Agenda Kegiatan Kampus
-Deployment: https://syehabudin25.github.io/uts-paw/
+- **Nama:** Syehabudin
+- **NIM:** 124140102
+- **Kelas:** RA
+- **Tema:** Agenda Kegiatan Kampus
+- **Deployment:** https://syehabudin25.github.io/uts-paw/
 
 ## Tangkapan Layar Aplikasi
 
